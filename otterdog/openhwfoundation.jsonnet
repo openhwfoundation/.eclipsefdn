@@ -1090,18 +1090,16 @@ orgs.newOrg('openhw', 'openhwfoundation') {
         orgs.newBranchProtectionRule('master') {
           is_admin_enforced: true,
           required_approving_review_count: null,
-          requires_pull_request: false,
+          requires_pull_request: true,
           requires_status_checks: false,
           requires_strict_status_checks: true,
-          restricts_pushes: true,
         },
         orgs.newBranchProtectionRule('develop') {
           is_admin_enforced: true,
           required_approving_review_count: null,
-          requires_pull_request: false,
+          requires_pull_request: true,
           requires_status_checks: false,
           requires_strict_status_checks: true,
-          restricts_pushes: true,
         },
       ],
       environments: [
