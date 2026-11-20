@@ -957,6 +957,17 @@ orgs.newOrg('openhw', 'openhwfoundation') {
         },
       ],
       rulesets: [
+        orgs.newRepoRuleset('Copilot review for default branch') {
+          copilot_code_review: orgs.newCopilotCodeReview() {
+            review_on_push: true,
+          },
+          allows_creations: true,
+          include_refs+: [
+            "~DEFAULT_BRANCH"
+          ],
+          required_pull_request: null,
+          required_status_checks: null,
+        },
         orgs.newRepoRuleset('Enforce passing CI regression') {
           allows_creations: true,
           include_refs+: [
